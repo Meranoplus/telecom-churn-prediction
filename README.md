@@ -26,12 +26,6 @@ Instead of using the default 0.5 threshold, out-of-fold probabilities from the w
 **Step 4 — Final Evaluation**
 The tuned model is retrained on the full training set and evaluated on the held-out test set.
 
-## Dataset
-
-The dataset contains telecom customer records with features including demographics, account info, service subscriptions, and contract details. Target variable is binary: `1` for churned customers, `0` for stayed/joined.
-
-Class distribution: ~73.5% stayed, ~26.5% churned.
-
 ## Preprocessing
 
 - Dropped identifiers and high-cardinality location columns
@@ -63,7 +57,7 @@ DB_TABLE=your_table
 ### 3. Run
 
 ```bash
-python 1.py
+python Churn_detection.py
 ```
 
 ## Dependencies
@@ -79,7 +73,9 @@ python 1.py
 
 ## Dataset
 
-Source: [Kaggle Telecom Customer Churn]https://www.kaggle.com/datasets/shilongzhuang/telecom-customer-churn-by-maven-analytics
+The dataset contains telecom customer records with features including demographics, account info, service subscriptions, and contract details. Target variable is binary: `1` for churned customers, `0` for stayed/joined.
+
+Source: [Kaggle Telecom Customer Churn](https://www.kaggle.com/datasets/shilongzhuang/telecom-customer-churn-by-maven-analytics)
 
 I cleaned the raw dataset and loaded it into MySQL for this pipeline. Main changes:
 - Dropped nulls and standardized column names
