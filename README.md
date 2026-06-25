@@ -76,3 +76,14 @@ python 1.py
 - SQLAlchemy + PyMySQL
 - pandas, numpy
 - python-dotenv
+
+## Dataset
+
+Source: [Kaggle Telecom Customer Churn]https://www.kaggle.com/datasets/shilongzhuang/telecom-customer-churn-by-maven-analytics
+
+I cleaned the raw dataset and loaded it into MySQL for this pipeline. Main changes:
+- Dropped nulls and standardized column names
+- Created binary target from `Customer Status`
+- Loaded into `telecom_churn2` table for SQL-based workflow
+
+Target: 1 = churned, 0 = stayed/joined. Class distribution: ~73.5% / ~26.5%.
