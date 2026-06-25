@@ -71,15 +71,19 @@ python Churn_detection.py
 - pandas, numpy
 - python-dotenv
 
-## Dataset
+## Files
 
-The dataset contains telecom customer records with features including demographics, account info, service subscriptions, and contract details. Target variable is binary: `1` for churned customers, `0` for stayed/joined.
+- `Churn_detection.py` — main pipeline
+- `setup.sql` — data cleaning (null imputation)
+- `requirements.txt`
+- `.gitignore`
+- `README.md`
+
+## Dataset
 
 Source: [Kaggle Telecom Customer Churn](https://www.kaggle.com/datasets/shilongzhuang/telecom-customer-churn-by-maven-analytics)
 
-I cleaned the raw dataset and loaded it into MySQL for this pipeline. Main changes:
-- Dropped nulls and standardized column names
-- Created binary target from `Customer Status`
-- Loaded into `telecom_churn2` table for SQL-based workflow
+Cleaned in SQL and loaded into MySQL. See [`setup.sql`](setup.sql) for cleaning steps.
 
-Target: 1 = churned, 0 = stayed/joined. Class distribution: ~73.5% / ~26.5%.
+- Target: 1 = churned, 0 = stayed/joined
+- Class distribution: ~73.5% stayed, ~26.5% churned
